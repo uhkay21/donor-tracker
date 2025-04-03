@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:14
+    container_name: donor_postgres
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: donor_tracker
+    ports:
+      - "5477:5432"
+    volumes:
+      - donor_data:/var/lib/postgresql/data
+
+volumes:
+  donor_data:
